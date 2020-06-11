@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      color: white;
+    }
+
+    body {
+      display: flex;
+      height: 100vh;
+      flex-flow: column;
+      font-size: 16px;
+      font-family: "Roboto Slab", serif;
+    }
+    .header {
+      outline: 1px solid white;
+      height: 3rem;
+    }
+    .menu {
+      display: flex;
+      background-color: #cd5c5c;
+    }
+    .menu-item {
+      list-style: none;
+      outline: 1px solid white;
+      flex: 1;
+      line-height: 3rem;
+      text-align: center;
+      transition: flex 0.5s;
+    }
+    .menu-item:hover {
+      flex: 6;
+    }
+    .container {
+      background: linear-gradient(#cd5c5c, #ffa07a);
+      display: flex;
+      height: inherit;
+    }
+    .content {
+      outline: 2px solid white;
+      flex: 1;
+      display: flex;
+      /* justify-content: center; */
+      flex-direction: column;
+      margin: 10px;
+      padding: 20px;
+    }
+    .content h2 {
+      font-size: 20px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    .images {
+      display: flex;
+      flex-flow: wrap;
+      justify-content: center;
+      align-items: center;
+      flex: 1;
+    }
+    .images__item {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      margin: 10px;
+    }
+    .aside {
+      outline: 2px solid white;
+      flex: 0 0 25%;
+      margin: 10px;
+    }
+    .todo-list {
+      width: 140px;
+      margin-left: 25px;
+      display: flex;
+      flex-direction: column;
+      height: 776px;
+      padding-top: 40px;
+    }
+    .todo-list__item {
+      flex: 1;
+    }
+    .footer {
+      height: 6rem;
+      margin-top: auto;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      background-color: #ffa07a;
+    }
+    .footer a {
+      text-decoration: none;
+    }
+  </style>
+  <body>
+    <header class="header">
+      <ul class="menu">
+        <li class="menu-item">Home</li>
+        <li class="menu-item">Galery</li>
+        <li class="menu-item">About</li>
+        <li class="menu-item">Contacto</li>
+      </ul>
+    </header>
+    <section class="container">
+      <section class="content">
+        <h2>PRUEBAS INTERESANTES :D</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
+          deserunt, modi animi necessitatibus natus, labore voluptatum aliquid
+          sit ab, laborum eos beatae neque sint. Eligendi optio id facere
+          asperiores voluptate!
+        </p>
+        <div class="images">
+          <img
+            src="https://images.pexels.com/photos/4346583/pexels-photo-4346583.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+            alt=""
+            class="images__item"
+          />
+          <img
+            src="https://images.pexels.com/photos/3727149/pexels-photo-3727149.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+            alt=""
+            class="images__item"
+          />
+          <img
+            src="https://images.pexels.com/photos/4322501/pexels-photo-4322501.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+            alt=""
+            class="images__item"
+          />
+          <img
+            src="https://images.pexels.com/photos/4348226/pexels-photo-4348226.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+            alt=""
+            class="images__item"
+          />
+          <img
+            src="https://images.pexels.com/photos/4334161/pexels-photo-4334161.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+            alt=""
+            class="images__item"
+          />
+          <img
+            src="https://images.pexels.com/photos/2568375/pexels-photo-2568375.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+            alt=""
+            class="images__item"
+          />
+        </div>
+      </section>
+      <aside class="aside">
+        <ul class="todo-list">
+          <li class="todo-list__item">Descripcion img 1</li>
+          <li class="todo-list__item">Descripcion img 2</li>
+          <li class="todo-list__item">Descripcion img 3</li>
+          <li class="todo-list__item">Descripcion img 4</li>
+          <li class="todo-list__item">Descripcion img 5</li>
+          <li class="todo-list__item">Descripcion img 6</li>
+          <li class="todo-list__item">Descripcion img 7</li>
+        </ul>
+      </aside>
+    </section>
+    <footer class="footer">
+      <a href="">Términos de uso</a>
+      <a href="">Declaración de privacidad</a>
+      <a href="">Centro de ayuda</a>
+    </footer>
+  </body>
+</html>
