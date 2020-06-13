@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reto</title>
+  </head>
+  <body>
+    <header>
+      <h1>Juega Piedra papel o tijera</h1>
+    </header>
+    <script>
+      var maquina;
+      var usuario;
+      var valor = {
+        piedra: 1,
+        papel: 2,
+        tijera: 3,
+      };
+
+      function aleatorio() {
+        return Math.floor(Math.random() * (3 + 1 - 1) + 1);
+      }
+
+      // Puedes escoger un valor con valor."lo que quieras sacar"
+
+      function juega(usuario) {
+        maquina = aleatorio();
+        if (usuario == 1 && maquina == 1) {
+          console.log("Empate ambos sacaron piedra");
+        } else if (usuario == 1 && maquina == 2) {
+          console.log("Perdiste la la maquina sacó papel");
+        } else if (usuario == 1 && maquina == 3) {
+          console.log("Ganaste la maquina sacó tijeras");
+        } else if (usuario == 2 && maquina == 1) {
+          console.log("Ganaste la maquina sacó piedra");
+        } else if (usuario == 2 && maquina == 2) {
+          console.log("Empate ambos sacaron papel");
+        } else if (usuario == 2 && maquina == 3) {
+          console.log("Perdiste la maquina sacó tijeras");
+        } else if (usuario == 3 && maquina == 1) {
+          console.log("Perdiste la maquina sacó piedra");
+        } else if (usuario == 3 && maquina == 2) {
+          console.log("Ganaste la maquina sacó papel");
+        } else if (usuario == 3 && maquina == 3) {
+          console.log("Empate ambos sacaron tijeras");
+        }
+      }
+    </script>
+  </body>
+</html>
