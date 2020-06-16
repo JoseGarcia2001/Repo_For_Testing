@@ -10,7 +10,7 @@ for (const iterator of object) {
 }
 
 while (condition) {}
-//coemtnario
+//coementario
 function nuevoAuto(marca, modelo, año) {
   this.marca = marca;
   this.modelo = modelo;
