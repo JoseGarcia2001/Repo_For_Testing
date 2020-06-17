@@ -25,3 +25,15 @@ var sacha = {
 function imprimirNombreYEdad(persona) {
   console.log(`Hola, me llamo ${persona.nombre} y tengo ${persona.edad} años`);
 }
+
+
+
+function validacionMayoriaDeEdad (persona) {
+    console.log(persona.nombre + 'es: ')
+    if(persona.edad >= 18) {
+        console.log('mayor de edad')
+    }
+    else(persona.edad < 18) {
+        console.log('menor de edad')
+    }
+}

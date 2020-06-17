@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    var jose = {
+      nombre: "Jose",
+      apellido: "Garcia",
+      edad: 28,
+      peso: 60,
+    };
+
+    console.log(`Al inicio del año ${jose.nombre} pesa ${jose.peso}kg`);
+
+    const VARIA_PESO = 0.3;
+    const DIAS_DEL_AÑO = 365;
+
+    const aumentarDePeso = (persona) => (persona.peso += VARIA_PESO);
+    const adelgazarDePeso = (persona) => (persona.peso -= VARIA_PESO);
+    const comeMucho = () => Math.random() < 0.3;
+    const haceEjercicio = () => Math.random() < 0.4;
+
+    const PESO_IDEAL = jose.peso - 3;
+    var dias = 0;
+
+    // for (var i = 1; i <= DIAS_DEL_AÑO; i++) {
+    //   var random = Math.random();
+
+    //   if (random < 0.25) {
+    //     aumentarDePeso(jose);
+    //   } else if (random < 0.5) {
+    //     adelgazarDePeso(jose);
+    //   }
+    // }
+
+    // console.log(`Al final del año ${jose.nombre} pesa ${jose.peso.toFixed(1)}kg`);
+
+    while (jose.peso > PESO_IDEAL) {
+      if (comeMucho()) {
+        aumentarDePeso(jose);
+      }
+      if (haceEjercicio()) {
+        adelgazarDePeso(jose);
+      }
+      dias += 1;
+    }
+
+    console.log(`A ${jose.nombre} le toma ${dias} dias en bajar 3 kg`);
+  </script>
+</html>
