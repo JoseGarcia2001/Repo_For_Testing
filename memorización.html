@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    function calcularFactorial(n) {
+      if (!this.cache) {
+        this.cache = {};
+      }
+      debugger;
+      if (this.cache[n]) {
+        return this.cache[n];
+      }
+
+      if (n === 1) {
+        return 1;
+      }
+
+      this.cache[n] = n * calcularFactorial(n - 1);
+      debugger;
+      return this.cache[n];
+    }
+  </script>
+</html>
