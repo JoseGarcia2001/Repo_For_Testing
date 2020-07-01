@@ -55,7 +55,7 @@ descripcionJose();
 
 const firstPromise = () => {
   return new Promise((resolve, reject) => {
-    if (0) {
+    if (1) {
       resolve("Correcto");
     } else {
       reject("rayos, está mal");
