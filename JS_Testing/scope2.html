@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p><em>abre la consola</em></p>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      // Global Scope
+      // var message = "Hello Platzi";
+
+      // var $ = function (message) {
+      //   console.log(message);
+      // };
+
+      //Function Scope
+      function printNumbers() {
+        for (let i = 0; i < 10; i++) {
+          setTimeout(function () {
+            console.log(i);
+          }, 100);
+        }
+      }
+      printNumbers();
+    </script>
+  </body>
+</html>
