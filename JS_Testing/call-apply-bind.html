@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul>
+      <li><button class="call-to-action">Aprender</button></li>
+      <li><button class="call-to-action">Aprender Más</button></li>
+      <li><button class="call-to-action">Nunca para de aprender</button></li>
+    </ul>
+    <script>
+      function saludar() {
+        console.log(`Hola soy ${this.name} ${this.lastName}`);
+      }
+
+      const jose = {
+        name: "Jose",
+        lastName: "Garcia",
+      };
+
+      saludar.call(jose);
+
+      function playingTime(videoGame, playingTime) {
+        console.log(`${this.name} juega a ${videoGame} por ${playingTime}`);
+      }
+      playingTime.call(jose, "League Of Legends", "3 Horas");
+
+      //apply
+
+      const values = ["Fornite", "2 horas"];
+
+      playingTime.apply(jose, values);
+
+      //Bind
+
+      const anderson = { name: "Anderson", lastName: "Garcia" };
+      const andersonSaluda = saludar.bind(anderson);
+      andersonSaluda();
+
+      const TiempoAnderson = playingTime.bind(anderson, "cars");
+      TiempoAnderson("3 horas");
+
+      const buttons = document.getElementsByClassName("call-to-action");
+      // buttons.forEach((button) => {
+      //   button.onclick = () => alert("ay, me presionaron");
+      // });
+      Array.prototype.forEach.call(buttons, (button) => {
+        button.onclick = () => alert("ay");
+      });
+    </script>
+  </body>
+</html>

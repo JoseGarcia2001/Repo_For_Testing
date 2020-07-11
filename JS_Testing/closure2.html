@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p><em>abre la consola</em></p>
+    <script>
+      // //CLOSURES
+
+      // //IFE
+      // (function () {
+      //   let color = "blue";
+
+      //   function printColor() {
+      //     console.log(color);
+      //   }
+
+      //   printColor();
+      // })();
+
+      // //FUNCIONES QUE REGRESA FUNCIONES
+
+      // function makeColorPrinter(color) {
+      //   let colorMessage = `The color is ${color}`;
+
+      //   return function () {
+      //     console.log(colorMessage);
+      //   };
+      // }
+
+      // let greenColorPrinter = makeColorPrinter("green");
+      // console.log(greenColorPrinter());
+
+      // (function () {
+      //   let miNombre = "JOSE";
+
+      //   function imprimirMiNombre() {
+      //     console.log(miNombre);
+      //   }
+
+      //   imprimirMiNombre();
+      // })();
+
+      // function creadorDeFuncion() {
+      //   let miNombre = "JOSE";
+
+      //   return function imprimirInterna() {
+      //     console.log(miNombre);
+      //   };
+      // }
+      // let MiNombre = creadorDeFuncion();
+      // console.log(MiNombre());
+      // const counter = {
+      //   count: 3,
+      // };
+
+      // function makeCounter(n) {
+      //   let count = n;
+
+      //   return {
+      //     increase: function () {
+      //       count++;
+      //     },
+      //     decrease: function () {
+      //       count--;
+      //     },
+      //     getCount: function () {
+      //       return count;
+      //     },
+      //   };
+      // }
+
+      // let counter = makeCounter(8);
+      // console.log(counter.getCount());
+      // console.log(counter.decrease());
+      // console.log(counter.decrease());
+      // console.log(counter.getCount());
+
+      function cuentaManzanas(n) {
+        let manzanas = n;
+
+        return {
+          sumarManzanas: () => manzanas++,
+          restarManzanas: () => manzanas--,
+          contarManzanas: () => console.log(`Tengo ${manzanas} manzanas`),
+        };
+      }
+
+      const misManzanas = cuentaManzanas(5);
+      misManzanas.contarManzanas();
+      misManzanas.sumarManzanas();
+      misManzanas.sumarManzanas();
+      misManzanas.sumarManzanas();
+      misManzanas.contarManzanas();
+      misManzanas.restarManzanas();
+      misManzanas.restarManzanas();
+      misManzanas.restarManzanas();
+      misManzanas.contarManzanas();
+    </script>
+  </body>
+</html>
