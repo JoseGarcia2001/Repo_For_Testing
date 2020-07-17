@@ -3,29 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MD</title>
+    <title>Media Player</title>
   </head>
-  <style>
-    body {
-      margin: 0;
-    }
-    .container {
-      margin: 0 30px;
-      width: 100%;
-    }
-    .movie {
-      margin: 30px;
-      width: 800px;
-    }
-  </style>
   <body>
-    <header>
-      <h1>Media Player</h1>
-    </header>
-    <div class="container">
-      <video src="./assets/BigBuckBunny.mp4" class="movie"></video>
-      <button class="button_play/pause">Play/Pause</button>
-    </div>
-    <script src="./MD.js"></script>
+    <h1>Media Player</h1>
+    <main class="container">
+      <video id="movie">
+        <source src="./assets/BigBuckBunny.mp4" />
+      </video>
+      <br />
+      <button id="Play/Pause">Play/Pause</button>
+      <button id="Mute/Unmute">Mute/Unmute</button>
+    </main>
+    <script src="./assets/MyMedia.js" type="module"></script>
   </body>
 </html>
