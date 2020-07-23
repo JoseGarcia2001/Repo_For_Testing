@@ -7,9 +7,7 @@ const video = document.querySelector(".movie");
 
 const player = new mediaPlayer({
   value: video,
-  plugins: [
-    // new AutoPlay()
-  ],
+  plugins: [new AutoPlay()],
 });
 
 buttonPlay.onclick = () => player.PlayOrPause();

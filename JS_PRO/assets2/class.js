@@ -6,9 +6,21 @@ function mediaPlayer(config, plugins) {
 }
 
 mediaPlayer.prototype.autoRunPlugins = function () {
+  const player = {
+    media: this.media,
+    Play: () => this.media.play(),
+
+    get muted() {
+      return this.media.muted;
+    },
+
+    set muted(value) {
+      this.media.muted = value;
+    },
+  };
+
   this.plugins.forEach((plugin) => {
-    console.log(this);
-    plugin.run(this);
+    plugin.run(player);
   });
 };
 
