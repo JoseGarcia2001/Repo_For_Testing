@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promises Async</title>
+  </head>
+  <style>
+    header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    button {
+      margin-left: 15px;
+    }
+  </style>
+  <body>
+    <header>
+      <h1>PRÁCTICA ASINCRONISMO</h1>
+      <h3>Para este ejercicio voy a repasar los siguientes conseptos</h3>
+      <ul>
+        <li>Fetch</li>
+        <li>Manejo de APIS</li>
+        <li>Asincronismo</li>
+        <li>Async Await</li>
+      </ul>
+      <div class="container">
+        <h1>Obtener top películas de la semana</h1>
+        <button id="sequence">Get In Sequence</button>
+        <button id="parallel">Get In Parallel</button>
+        <button id="fastest">Get The Fastets</button>
+      </div>
+      <ul id="listMovies"></ul>
+      <script src="./promisesAsinc.js"></script>
+    </header>
+  </body>
+</html>

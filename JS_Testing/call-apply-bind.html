@@ -19,7 +19,12 @@
       const jose = {
         name: "Jose",
         lastName: "Garcia",
+        saludar: function () {
+          console.log(this.name);
+        },
       };
+
+      jose.saludar();
 
       saludar.call(jose);
 
@@ -50,6 +55,21 @@
       Array.prototype.forEach.call(buttons, (button) => {
         button.onclick = () => alert("ay");
       });
+
+      function saludar2() {
+        console.log(`Hola!, soy ${this.nombre} ${this.apellido}`);
+      }
+
+      const calidoso = {
+        nombre: "JOSE",
+        apellido: "GARCIA",
+      };
+
+      saludar2.call(calidoso);
+
+      saludar2.apply(jose);
+
+      const saludarAlCalidoso = saludar2.bind(calidoso);
     </script>
   </body>
 </html>
