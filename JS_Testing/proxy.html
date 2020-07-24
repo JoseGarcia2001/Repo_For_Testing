@@ -6,7 +6,33 @@
     <title>Proxy</title>
   </head>
   <body>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/levenshtein/1.0.5/levenshtein.min.js"></script>
-    <script></script>
+    <script src="https://unpkg.com/fast-levenshtein@2.0.6/levenshtein.js"></script>
+    <script>
+      const target = {
+        mango: "mango",
+        pera: "pera",
+        papaya: "papaya",
+      };
+
+      const handler = {
+        get: function (myObject, prop) {
+          if (prop in myObject) {
+            return myObject[prop];
+          }
+
+          const sugerencia = Object.keys(myObject).find((key) => {
+            return Levenshtein.get(prop, key) <= 3;
+          });
+
+          if (sugerencia) {
+            return console.log(
+              `Lo siento no pudimos hallar ${prop} sin embargo posiblemente usted lo que busca sea ${sugerencia}`
+            );
+          }
+        },
+      };
+
+      const fruta = new Proxy(target, handler);
+    </script>
   </body>
 </html>
