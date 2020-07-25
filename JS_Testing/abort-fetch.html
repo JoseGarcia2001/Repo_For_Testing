@@ -13,8 +13,6 @@
     <button id="stop" disabled>Stop Fetching</button>
 
     <script>
-      const url =
-        "https://images.pexels.com/photos/974470/nature-stars-milky-way-galaxy-974470.jpeg?q=100";
       const img = document.getElementById("huge-image");
       const loadButton = document.getElementById("load");
       const stopButton = document.getElementById("stop");
@@ -33,24 +31,25 @@
       }
 
       loadButton.onclick = async function () {
+        const url =
+          "https://images.pexels.com/photos/974470/nature-stars-milky-way-galaxy-974470.jpeg?q=100";
         startLoading();
+        controller = new AbortController();
 
         try {
-          controller = new AbortController();
           signal = controller.signal;
 
           const data = await fetch(url, { signal });
           const blob = await data.blob();
           const imgUrl = URL.createObjectURL(blob);
           img.src = imgUrl;
+          setTimeout(stopLoading(), 2000);
         } catch (error) {
           console.log(error);
         }
-
-        stopLoading();
       };
 
-      stopButton.onclick = function () {
+      stopButton.onclick = async function () {
         controller.abort();
         stopLoading();
       };
