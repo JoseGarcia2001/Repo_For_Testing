@@ -6,12 +6,18 @@
     <title>Document</title>
   </head>
   <style>
+    body {
+      margin: 0;
+      text-align: center;
+    }
     video {
-      width: 100%;
+      width: 50%;
+    }
+    li {
+      margin: 50px;
     }
   </style>
   <body>
-    <video src="./BigBuckBunny.mp4"></video>
     <ul>
       <li>PRUEBA</li>
       <li>PRUEBA</li>
@@ -45,6 +51,7 @@
       <li>PRUEBA</li>
       <li>PRUEBA</li>
       <li>PRUEBA</li>
+      <video src="./BigBuckBunny.mp4"></video>
       <li>PRUEBA</li>
       <li>PRUEBA</li>
       <li>PRUEBA</li>
@@ -75,6 +82,7 @@
       <li>PRUEBA</li>
     </ul>
     <script>
+      let pausedByVisibility;
       const threshold = 0.25;
       const video = document.querySelector("video");
       // video.muted = true;
@@ -88,13 +96,24 @@
       function handlerObserver(entries) {
         const entry = entries[0];
         console.log(entry);
-        const isVisible = entry.intersectionRatio >= threshold;
-        if (isVisible) {
+
+        if (entry.isIntersecting) {
           video.play();
+          pausedByVisibility = false;
         } else {
+          pausedByVisibility = true;
           video.pause();
         }
       }
+
+      const isVisible = document.visibilityState;
+      console.log(isVisible);
+
+      document.addEventListener("visibilitychange", () => {
+        const isVisible = document.visibilityState === "visible";
+        isVisible && !pausedByVisibility ? video.play() : video.pause();
+        // console.log(document.visibilityState);
+      });
     </script>
   </body>
 </html>
