@@ -14,7 +14,7 @@
 
     <script>
       const url =
-          "https://images.pexels.com/photos/974470/nature-stars-milky-way-galaxy-974470.jpeg?q=100";
+        "https://images.pexels.com/photos/974470/nature-stars-milky-way-galaxy-974470.jpeg?q=100";
       const img = document.getElementById("huge-image");
       const loadButton = document.getElementById("load");
       const stopButton = document.getElementById("stop");
@@ -42,15 +42,15 @@
           const data = await fetch(url, { signal });
           const blob = await data.blob();
           var reader = new FileReader();
-          await reader.readAsDataURL(blob)
+          await reader.readAsDataURL(blob);
           const imgUrl = URL.createObjectURL(blob);
           img.src = imgUrl;
         } catch (error) {
           console.log(error);
         }
-        reader.onloadend = () =>{
-          stopLoading()
-        }
+        reader.onloadend = () => {
+          stopLoading();
+        };
       };
 
       stopButton.onclick = async function () {

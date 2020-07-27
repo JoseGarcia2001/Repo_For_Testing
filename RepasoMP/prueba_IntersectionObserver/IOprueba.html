@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    video {
+      width: 100%;
+    }
+  </style>
+  <body>
+    <video src="./BigBuckBunny.mp4"></video>
+    <ul>
+      <li>PRUEBA</li>
+      <li>PRUEBA</li>
+      <li>PRUEBA</li>
+      <li>PRUEBA</li>
+      <li>PRUEBA</li>
+      <li>PRUEBA</li>
+      <li>PRUEBA</li>
+      <li>PRUEBA</li>
+      <li>PRUEBA</li>
+      <li>PRUEBA</li>
+      <li>PRUEBA</li>
+      <li>PRUEBA</li>
+      <li>PRUEBA</li>
+      <li>PRUEBA</li>
+      <li>PRUEBA</li>
+      <li>PRUEBA</li>
+      <li>PRUEBA</li>
+      <li>PRUEBA</li>
+      <li>PRUEBA</li>
+      <li>PRUEBA</li>
+      <li>PRUEBA</li>
+      <li>PRUEBA</li>
+      <li>PRUEBA</li>
+      <li>PRUEBA</li>
+      <li>PRUEBA</li>
+      <li>PRUEBA</li>
+      <li>PRUEBA</li>
+      <li>PRUEBA</li>
+      <li>PRUEBA</li>
+      <li>PRUEBA</li>
+      <li>PRUEBA</li>
+      <li>PRUEBA</li>
+      <li>PRUEBA</li>
+      <li>PRUEBA</li>
+      <li>PRUEBA</li>
+      <li>PRUEBA</li>
+      <li>PRUEBA</li>
+      <li>PRUEBA</li>
+      <li>PRUEBA</li>
+      <li>PRUEBA</li>
+      <li>PRUEBA</li>
+      <li>PRUEBA</li>
+      <li>PRUEBA</li>
+      <li>PRUEBA</li>
+      <li>PRUEBA</li>
+      <li>PRUEBA</li>
+      <li>PRUEBA</li>
+      <li>PRUEBA</li>
+      <li>PRUEBA</li>
+      <li>PRUEBA</li>
+      <li>PRUEBA</li>
+      <li>PRUEBA</li>
+      <li>PRUEBA</li>
+      <li>PRUEBA</li>
+      <li>PRUEBA</li>
+      <li>PRUEBA</li>
+      <li>PRUEBA</li>
+      <li>PRUEBA</li>
+      <li>PRUEBA</li>
+      <li>PRUEBA</li>
+    </ul>
+    <script>
+      const threshold = 0.25;
+      const video = document.querySelector("video");
+      // video.muted = true;
+      // video.play();
+      const observer = new IntersectionObserver(handlerObserver, {
+        threshold: threshold,
+      });
+
+      observer.observe(video);
+
+      function handlerObserver(entries) {
+        const entry = entries[0];
+        console.log(entry);
+        const isVisible = entry.intersectionRatio >= threshold;
+        if (isVisible) {
+          video.play();
+        } else {
+          video.pause();
+        }
+      }
+    </script>
+  </body>
+</html>
