@@ -106,13 +106,13 @@
         }
       }
 
-      const isVisible = document.visibilityState;
-      console.log(isVisible);
-
       document.addEventListener("visibilitychange", () => {
-        const isVisible = document.visibilityState === "visible";
-        isVisible && !pausedByVisibility ? video.play() : video.pause();
-        // console.log(document.visibilityState);
+        if (document.visibilityState === "hidden") {
+          video.pause();
+        } else {
+          video.play();
+        }
+        console.log();
       });
     </script>
   </body>

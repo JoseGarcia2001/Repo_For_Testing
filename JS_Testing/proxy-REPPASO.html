@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Proxy</title>
+  </head>
+  <body>
+    <script src="https://unpkg.com/fast-levenshtein@2.0.6/levenshtein.js"></script>
+    <script>
+      const colores = {
+        red: "Rojo",
+        blue: "Azul",
+        yellow: "Amarillo",
+        green: "Verde",
+      };
+
+      const getHandler = {
+        get: function (myObject, prop) {
+          if (prop in myObject) {
+            return prop;
+          }
+
+          const suggestion = Object.keys(myObject).find((key) => {
+            return Levenshtein.get(prop, key) <= 3;
+          });
+
+          if (suggestion) {
+            return console.error(
+              `No encuentro la propiedad ${prop} sin embargo usted podría buscar ${suggestion}`
+            );
+          }
+        },
+      };
+
+      //REPASO DE SET
+
+      const plantillaPersona = {
+        name: "",
+        lastName: "",
+        age: "",
+      };
+
+      const handler = {
+        set: function (target, prop, value) {
+          if (prop in target) {
+            return (target[prop] = value);
+          } else {
+            return console.log(`La propiedad ${prop} no existe en mi objeto`);
+          }
+        },
+      };
+
+      const Jose = new Proxy(plantillaPersona, handler);
+
+      const Colores = new Proxy(colores, getHandler);
+    </script>
+  </body>
+</html>

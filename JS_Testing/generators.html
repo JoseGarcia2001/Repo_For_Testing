@@ -17,9 +17,20 @@
         console.log("END");
       }
 
-      const gen = Generator();
+      function* migeneradorcito() {
+        const a = "avanza wee";
+        console.log("empezó la función");
+        yield "siguele compa";
+        yield 3;
+        yield a;
+        console.log("Terminé");
+      }
 
-      const gene = [....gen()];
+      const myG = migeneradorcito();
+
+      // const gen = Generator();
+
+      // const gene = [...gen()];
 
       function* idGenerator() {
         let id = 1;
@@ -33,6 +44,21 @@
           }
         }
       }
+
+      function* generatorIdsWithReset() {
+        let id = 1;
+        let reset;
+        while (true) {
+          reset = yield id;
+          if (reset) {
+            id = 1;
+          } else {
+            id++;
+          }
+        }
+      }
+
+      let IDS = generatorIdsWithReset();
 
       function* fibonacci() {
         let a = 1;
